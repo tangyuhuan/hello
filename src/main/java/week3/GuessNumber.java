@@ -1,3 +1,5 @@
+package week3;
+
 import java.util.Scanner;
 import java.util.Random;
 //猜数小游戏

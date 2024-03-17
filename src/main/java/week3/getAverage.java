@@ -1,3 +1,5 @@
+package week3;
+
 import java.util.Scanner;
 public class getAverage {
     public static void main(String[] args){

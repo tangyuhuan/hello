@@ -1,3 +1,5 @@
+package week2;
+
 public class SwitchTest {
     public static void main(String[] args){
         int type=3;

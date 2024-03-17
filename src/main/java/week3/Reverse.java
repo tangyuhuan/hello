@@ -1,3 +1,5 @@
+package week3;
+
 import java.util.Scanner;
 
 //反转输出一个整数

@@ -1,3 +1,5 @@
+package week3;
+
 import java.util.Scanner;
 
 //输入：一个整数

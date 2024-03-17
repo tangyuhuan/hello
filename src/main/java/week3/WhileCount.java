@@ -1,3 +1,5 @@
+package week3;
+
 public class WhileCount {
     public static void main(String[] args){
         int count = 100;
