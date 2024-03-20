@@ -43,6 +43,10 @@ public class Main {
             fh = "fu ";
             n = -n;
         }
+        if(n==0){
+            result = "ling";
+        }
+        int count=0;
         while(n>0){
             String r = "";
             switch(n%10){
@@ -77,7 +81,12 @@ public class Main {
                     r = "jiu";
                     break;
             }
-            result = r+" "+result;
+            if(count==0){
+                result = r+result;
+            }else{
+                result = r+" "+result;
+            }
+            count++;
             n /=10;
         }
         System.out.print(fh+result);
