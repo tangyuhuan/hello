@@ -36,9 +36,31 @@ public class TicTacToeGame {
             numOf0 = 0;
         }
         //判断列
-        for(int i=0;i<board.length;i++){
-            for(int j=0;j<board[i].length;j++){
-                if(board[j][i]==1){
+        if(!gotResult){
+            for(int i=0;i<board.length;i++){
+                for(int j=0;j<board[i].length;j++){
+                    if(board[j][i]==1){
+                        numOf1++;
+                    }else{
+                        numOf0++;
+                    }
+                }
+                if(numOf1 == SIZE || numOf0 == SIZE)
+                {
+                    gotResult = true;
+                    break;
+                }
+                numOf1 = 0;
+                numOf0 = 0;
+            }
+        }
+
+        if(!gotResult){
+            //判断对角线1
+            numOf1 = 0;
+            numOf0 = 0;
+            for(int i=0;i<board.length;i++){
+                if(board[i][i]==1){
                     numOf1++;
                 }else{
                     numOf0++;
@@ -47,46 +69,27 @@ public class TicTacToeGame {
             if(numOf1 == SIZE || numOf0 == SIZE)
             {
                 gotResult = true;
-                break;
             }
+
+        }
+
+        if(!gotResult){
+            //判断对角线2
             numOf1 = 0;
             numOf0 = 0;
-        }
-
-        //判断对角线1
-        numOf1 = 0;
-        numOf0 = 0;
-        for(int i=0;i<board.length;i++){
-            if(board[i][i]==1){
-                numOf1++;
-            }else{
-                numOf0++;
+            for(int i=0;i<board.length;i++){
+                if(board[i][board.length-i-1]==1){
+                    numOf1++;
+                }else{
+                    numOf0++;
+                }
             }
             if(numOf1 == SIZE || numOf0 == SIZE)
             {
                 gotResult = true;
-                break;
-            }
-
-        }
-
-        //判断对角线2
-        numOf1 = 0;
-        numOf0 = 0;
-        for(int i=0;i<board.length;i++){
-            if(board[i][board.length-i-1]==1){
-                numOf1++;
-            }else{
-                numOf0++;
-            }
-            if(numOf1 == SIZE || numOf0 == SIZE)
-            {
-                gotResult = true;
-                break;
             }
         }
-
-
+        
         System.out.println(gotResult);
 
     }
