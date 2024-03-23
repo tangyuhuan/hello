@@ -89,7 +89,7 @@ public class TicTacToeGame {
                 gotResult = true;
             }
         }
-        
+
         System.out.println(gotResult);
 
     }
