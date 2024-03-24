@@ -4,6 +4,9 @@ import java.util.Scanner;
 //比较两个String内容是否相同，应该用.equals()
 public class StringCompare {
     public static void main(String[] args) {
+        //s1.compareTo(s2)比较两个字符串的大小：如果s1比s2大返回正值，相等返回0，小返回负值
+
+        System.out.println("abA".compareTo("aba"));//-32,返回两个字符的差值（即第一个字符串中不匹配的字符的Unicode值减去第二个字符串中不匹配的字符的Unicode值）。
         Scanner in = new Scanner(System.in);
         String s = in.next(); //控制台录入bye
         System.out.println(s=="bye"); //false，比较是否同一个

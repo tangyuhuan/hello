@@ -12,5 +12,6 @@ public class StringTest {
         String s2 = "a string";
 
         System.out.println(1+2+s2);
+        System.out.println("string test".indexOf('t',3));
     }
 }

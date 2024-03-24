@@ -9,7 +9,8 @@ public class WrapperClass {
         //当需要让一个类或对象做事情的时候，用.运算符
         System.out.println(Integer.MAX_VALUE);//2147483647,即2^31-1
         System.out.println(Integer.MIN_VALUE);//-2147483648,即-2^31
-        System.out.println(Character.isDigit('1'));
-        System.out.println(Character.toLowerCase('I'));
+        System.out.println(Character.isDigit('1'));//判断这个字符是不是数字
+        System.out.println(Character.toLowerCase('I'));//把这个字符转换成小写
+
     }
 }
