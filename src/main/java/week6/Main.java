@@ -3,17 +3,22 @@ package week6;
 import java.util.Scanner;
 
 //题目1：单词长度
+//注意只录入.不需要输出
 //public class Main {
 //    public static void main(String[] args) {
 //        Scanner in = new Scanner(System.in);
 //        String line = in.nextLine();
-//        String[] array = line.split(" ");
+//        String[] array = line.split("\\s+"); //匹配一个或多个空白字符可以使用 \s+
+////        System.out.println(array.length);
 //        for(int i=0;i<array.length-1;i++){
+////            System.out.println(array[i]);
 //            if(array[i].length()>0){
 //                System.out.print(array[i].length()+" ");
 //            }
 //        }
-//        System.out.print(array[array.length-1].length()-1);
+//        if((array[array.length-1].length()-1)!=0){
+//            System.out.print(array[array.length-1].length()-1);
+//        }
 //    }
 //}
 
@@ -25,6 +30,7 @@ import java.util.Scanner;
 //Integer.parseInt(s,16)从String变量s中得到其表达的整数数字，16表示16进制
 //输入：$GPRMC,024813.640,A,3158.4608,N,11848.3737,E,10.05,324.27,150706,,,A*50
 //输出：10:48:13
+//注意：跨日的运算、补0
 import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
@@ -44,7 +50,17 @@ public class Main {
                 }
                 result = result%65536;
                 if((array[2].equals("A"))&&(result==goal)){
-                    bjtime = Integer.parseInt(str.substring(6,8))+8+":"+str.substring(8,10)+":"+str.substring(10,12);
+                    String hh = "";
+                    if((Integer.parseInt(str.substring(6,8))+8)>=24){
+                        hh = "0"+(Integer.parseInt(str.substring(6,8))+8-24);
+                    }
+                    else if((Integer.parseInt(str.substring(6,8))+8)<10){
+                        hh = "0"+(Integer.parseInt(str.substring(6,8))+8);
+                    }
+                    else{
+                        hh = Integer.parseInt(str.substring(6,8))+8+"";
+                    }
+                    bjtime = hh+":"+str.substring(8,10)+":"+str.substring(10,12);
                 }
             }
             line = in.nextLine();
